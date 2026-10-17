@@ -24,6 +24,19 @@
 
 <div class="paper-content">
   <section class="paper-section" id="findings" aria-labelledby="findings-title"><h2 id="findings-title">What changes when the pairs are wrong?</h2><p>A web caption may omit something visible, or add information that is only spuriously associated with the image. Contrastive training must learn from these imperfect pairs. Our work traces how that mismatch affects neuron-level representations, from the optimization process to out-of-domain prediction.</p>
+    <figure class="paper-figure caption-example" style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px;align-items:center;padding:24px">
+        <a class="figure-link" data-lightbox href="../../assets/images/slides-caption-example.jpg"><img src="../../assets/images/slides-caption-example.jpg" alt="Blue Mercedes-Benz parked beside a yellow vehicle, the original example image from the presentation" loading="lazy"></a>
+        <div>
+          <h3>Same image, different training signal</h3>
+          <p><strong>Mismatched caption · illustrative</strong><br>“A dog runs across a grassy field.”</p>
+          <p><strong>Image-grounded caption · from the slides</strong><br>“A blue Mercedes-Benz car parked beside a yellow vehicle.”</p>
+          <p>The first caption pairs car features with unrelated dog and grass features. The second describes what is actually visible.</p>
+        </div>
+      </div>
+      <figcaption><strong>A concrete example from the presentation.</strong> The dog caption is an intentionally constructed mismatch, not the image’s original web caption. The slides label the image-grounded description as BLIP2-generated.</figcaption>
+    </figure>
+    <p><strong>From a wrong caption to mixed features.</strong> A contrastive objective treats the supplied image–text pair as a positive pair. When unrelated features repeatedly co-occur across these pairs, training can learn that spurious association. Under the paper’s structured-data assumptions, neurons can then mix semantic directions; recaptioning and filtering help restore feature purity. The image above illustrates the mismatch, not a measured neuron-level result.</p>
     <div class="finding-list">
       <article class="finding"><span class="finding-number">01</span><div><h3>Joint training dynamics</h3><p>We analyze stochastic gradient descent for two nonlinear ReLU encoders trained together with a contrastive objective. This connects the evolution of image and text features to the representations produced by training.</p></div></article>
       <article class="finding"><span class="finding-number">02</span><div><h3>Feature mixing under misalignment</h3><p>Spurious and missing text features can make neurons encode mixtures of relevant and irrelevant directions. Feature purity describes how selectively a neuron represents a feature, providing a link between data quality and generalization.</p></div></article>
