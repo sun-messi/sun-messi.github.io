@@ -1,0 +1,35 @@
+/* Homepage-only dark palette. Research figures retain their original pixels. */
+@media screen {
+  :root { color-scheme:dark; --ink:#edf0f5; --muted:#b1bac8; --blue:#95baf0; --line:#303843; --soft:#1a2330; --warm:#29251f; background:#101318; }
+  body { background:#101318; color:var(--ink); }
+  ::selection { background:#35567c; color:#fff; }
+  .site-header { background:rgba(16,19,24,.95); }
+  .monogram { background:#2a4262; color:#edf3ff; }
+  .nav a,.position,.hero-copy { color:#bac4d2; }
+  .nav a:hover { color:#c3d9fb; }
+  .hero-copy strong,.pub-authors strong { color:#edf0f5; }
+  .chinese-name,.portrait-caption,.interests span,.pub-year,.timeline .date,.honor span,.site-footer,.footer-inner a { color:#a3afbf; }
+  .portrait { border:1px solid #384352; box-shadow:0 16px 45px #0003; }
+  .button,.menu-toggle { background:#1b222c; color:#dae5f6; border-color:#3b4859; }
+  .button:hover { background:#29364a; }
+  .button.primary { background:#a9c8f1; border-color:#a9c8f1; color:#142137; }
+  .button.primary:hover { background:#c0d8f8; }
+  .research-card { background:#171d25; }
+  .research-card:hover { border-color:#5e789b; box-shadow:0 8px 28px #0003; }
+  .research-image,.research-image.diffusion { background:#202a36; }
+  .venue { background:#263b55; color:#b7d6ff; }
+  .venue.warm { background:#393125; color:#e2cba6; }
+  .pub-venue { color:#aec1db; }
+  .contact { border-color:#354459; }
+  .callout { color:#c2d3ea; border-color:#8aafe0; }
+  .paper-figure .figure-link { background:#202832; border-color:#3d4959; }
+  .paper-figure .figure-link:hover { border-color:#8aafe0; }
+  .paper-figure img { background:#fff; }
+  .paper-figure figcaption { color:#b1bac8; }
+  .paper-figure figcaption strong { color:#e1e8f2; }
+  summary { color:#a9c8f1; cursor:pointer; }
+  .lightbox { background:#1b222c; }
+  .lightbox-close { background:#344257; color:#edf0f5; }
+  .skip-link { background:#22334a; color:#dceaff; }
+  @media(max-width:640px) { .nav { background:#171d25; } }
+}
